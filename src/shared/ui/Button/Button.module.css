@@ -1,0 +1,32 @@
+.btnBase {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity .3s;
+    border: none;
+    background-color: transparent;
+}
+
+.btnBase:hover {
+    opacity: .8;
+}
+
+.text {
+    color: var(--black-text);
+}
+
+.contained {
+    background-color: var(--orange-text);
+    color: var(--white-text);
+}
+
+.outlined {
+    background-color: transparent;
+    color: var(--orange-text);
+    outline: 1px solid var(--orange-text);
+}

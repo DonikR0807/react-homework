@@ -1,0 +1,28 @@
+.embla {
+    position: relative;
+    width: 100%;
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    flex: 0 0 160px;
+    min-width: 0;
+    margin-right: 24px;
+}
+
+.carouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carouselBtn:disabled {
+    display: none;
+}

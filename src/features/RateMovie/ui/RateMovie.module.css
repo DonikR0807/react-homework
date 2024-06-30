@@ -1,0 +1,23 @@
+.root {
+    display: flex;
+    gap: 8px;
+}
+
+.radio {
+    display: none;
+}
+
+.btn {
+    font-family: var(--font-family) !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 143% !important;
+    color: var(--grey-text) !important;
+    text-align: center !important;
+}
+
+.star {
+    margin-bottom: 8px;
+    display: block;
+    fill: var(--grey-text);
+}

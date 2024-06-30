@@ -1,0 +1,22 @@
+.root {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.icon {
+    fill: var(--black-text);
+}
+
+.icon.disabled {
+    fill: #ababab;
+}
+
+.currentPage {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: center;
+    color: var(--black-text);
+}

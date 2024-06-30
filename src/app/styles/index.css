@@ -1,0 +1,20 @@
+@import url(./fonts.css);
+@import url(./reset.css);
+
+:root {
+    --font-family: "SF Pro Text", sans-serif;
+    --second-family: "Roboto", sans-serif;
+    --third-family: "Inter", sans-serif;
+    --black-text: #1B1F23;
+    --grey-text: #ABABAB;
+    --white-text: #FFFFFF;
+    --orange-text: #FF5500;
+    --header-bg: #333;
+    --grey-placeholder: #999fa6;
+    --header-height: 88px;
+    --page-bg: #ededed;
+}
+
+html {
+    background-color: var(--page-bg);
+}

@@ -1,0 +1,23 @@
+.root {
+    border-radius: 8px;
+    padding: 24px;
+    width: 408px;
+    background-color: var(--white-text);
+    box-sizing: border-box;
+}
+
+.text {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--black-text);
+    margin-bottom: 20px;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+

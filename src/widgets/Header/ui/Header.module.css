@@ -1,0 +1,36 @@
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 26px 32px;
+    box-sizing: border-box;
+    background-color: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    z-index: 10000;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--white-text);
+}
+
+.profileIcon {
+    fill: var(--header-bg);
+    width: 22px;
+    height: 22px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}

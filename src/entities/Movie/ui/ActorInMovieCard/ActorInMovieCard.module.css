@@ -1,0 +1,19 @@
+.root {
+    width: 100%;
+}
+
+.img {
+    border-radius: 8px;
+    width: 160px;
+    height: 228px;
+    margin-bottom: 16px;
+    object-fit: cover;
+}
+
+.caption {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--black-text);
+}

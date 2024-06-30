@@ -1,0 +1,19 @@
+.root {
+    position: relative;
+    margin-top: 20px;
+    height: calc(100vh - var(--header-height) - 20px)
+}
+
+.error {
+    font-family: var(--third-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: var(--black-text);
+    position: absolute;
+}
+
+.movieContainer {
+    margin-bottom: 100px;
+}

@@ -1,0 +1,51 @@
+.root {
+    border-radius: 8px;
+    padding: 12px;
+    background-color: var(--white-text);
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.root:has(.input:focus) {
+    outline: 1px solid var(--orange-text);
+}
+
+.input {
+    display: block;
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    color: var(--black-text);
+    border: none;
+    flex-grow: 1;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input::placeholder {
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    color: var(--grey-placeholder);
+}
+
+.label {
+    display: block;
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--black-text);
+    margin-bottom: 4px;
+}
+
+.clearBtn {
+    fill: var(--grey-placeholder);
+    cursor: pointer;
+}

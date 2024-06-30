@@ -1,0 +1,58 @@
+.root {
+    height: 100%;
+}
+
+.dataContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.notFoundContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notFound {
+    font-family: var(--third-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: var(--black-text);
+}
+
+.caption {
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: center;
+    color: var(--grey-placeholder);
+}
+
+.error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--third-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: var(--black-text);
+}
+
+.paginationContainer {
+    margin: 16px 0;
+}

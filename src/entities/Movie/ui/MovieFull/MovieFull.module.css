@@ -1,0 +1,54 @@
+.root {
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--white-text);
+}
+
+.container {
+    display: flex;
+    gap: 32px;
+}
+
+.img {
+    width: 400px;
+    height: 500px;
+    border-radius: 8px;
+}
+
+.title {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    color: var(--black-text);
+    margin-bottom: 36px;
+}
+
+.detail {
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--black-text);
+    margin-bottom: 16px;
+}
+
+.info {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--black-text);
+    margin-left: 8px;
+}
+
+.description {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--black-text);
+    margin-top: 16px;
+}

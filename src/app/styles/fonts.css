@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "SF Pro Text";
+    src: 
+        url("../../shared/assets/fonts/SFProText-Regular.ttf") format("ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: 
+        url("../../shared/assets/fonts/SFProText-Medium.ttf") format("ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: 
+        url("../../shared/assets/fonts/SFProText-Bold.ttf") format("ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: 
+        url("../../shared/assets/fonts/Roboto-Regular.ttf") format("ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: 
+        url("../../shared/assets/fonts/Roboto-Medium.ttf") format("ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: 
+        url("../../shared/assets/fonts/Roboto-Bold.ttf") format("ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: 
+        url("../../shared/assets/fonts/Inter-Regular.ttf") format("ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: 
+        url("../../shared/assets/fonts/Inter-Medium.ttf") format("ttf");
+    font-weight: 500;
+}
+
+

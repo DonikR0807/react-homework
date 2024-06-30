@@ -1,0 +1,23 @@
+.root {
+    margin: 20px auto 0;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.contentContainer {
+    flex-grow: 1;
+    min-height: calc(100vh - var(--header-height) - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer {
+    width: 400px;
+    margin-bottom: 16px;
+}
+
+.movieListContainer {
+    flex-grow: 1;
+    position: relative;
+}
