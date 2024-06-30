@@ -1,6 +1,5 @@
 .root {
     display: flex;
-    gap: 8px;
 }
 
 .radio {
@@ -14,10 +13,10 @@
     line-height: 143% !important;
     color: var(--grey-text) !important;
     text-align: center !important;
+    padding: 0 8px 0 0 !important;
 }
 
 .star {
     margin-bottom: 8px;
     display: block;
-    fill: var(--grey-text);
 }

@@ -3,6 +3,7 @@ import s from "./MoviePage.module.css";
 import { useParams } from "react-router-dom";
 import { ConditionalRender, Loader } from "src/shared/ui";
 import { Carousel } from "src/shared/ui/Carousel/Carousel";
+import { RateMovie } from "src/features/RateMovie/ui/RateMovie";
 
 export const MoviePage = () => {
   const { movieId } = useParams<"movieId">();
@@ -21,7 +22,9 @@ export const MoviePage = () => {
             return (
               <div>
                 <div className={s.movieContainer}>
-                  <MovieFull {...data}></MovieFull>
+                  <MovieFull {...data}>
+                    <RateMovie></RateMovie>
+                  </MovieFull>
                 </div>
                 <Carousel
                   slides={data.actors.map((actor) => (

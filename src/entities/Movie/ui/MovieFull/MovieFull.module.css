@@ -17,13 +17,20 @@
     border-radius: 8px;
 }
 
+.titleContainer {
+    display: flex;
+    margin-bottom: 36px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .title {
     font-family: var(--second-family);
     font-weight: 600;
     font-size: 32px;
     line-height: 100%;
     color: var(--black-text);
-    margin-bottom: 36px;
 }
 
 .detail {

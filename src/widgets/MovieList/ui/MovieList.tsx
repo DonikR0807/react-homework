@@ -15,6 +15,8 @@ import { GenresEnglish } from "src/features/Filter/model/types";
 import { selectSearchValue } from "src/features/Search/model/selectors";
 import React from "react";
 import { ConditionalRender, Loader } from "src/shared/ui";
+import { RateMovie } from "src/features/RateMovie/ui/RateMovie";
+import { useNavigate } from "react-router-dom";
 
 export const MovieList = () => {
   const currentPage = useSelector(selectCurrentPage);
@@ -23,6 +25,7 @@ export const MovieList = () => {
   const yearIsNotSelected = useSelector(selectYearIsNotSelected);
   const genreIsNotSelected = useSelector(selectGenreIsNotSelected);
   const searchValue = useSelector(selectSearchValue);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const queryString = React.useMemo(() => {
@@ -64,6 +67,13 @@ export const MovieList = () => {
     }
   }, [data, dispatch]);
 
+  function handleMovieClick(e: React.MouseEvent<HTMLElement>, movieId: string) {
+    const target = e.target as HTMLElement;
+    if (!target.closest("#" + `id${movieId}`)) {
+      navigate("/movie/" + movieId);
+    }
+  }
+
   return (
     <div className={s.root}>
       <ConditionalRender
@@ -73,7 +83,15 @@ export const MovieList = () => {
             <div className={s.dataContainer}>
               <div className={s.list}>
                 {data?.search_result.map((shortMovie) => (
-                  <MovieCard {...shortMovie} key={shortMovie.id}></MovieCard>
+                  <MovieCard
+                    {...shortMovie}
+                    key={shortMovie.id}
+                    onClick={(e) => handleMovieClick(e, shortMovie.id)}
+                  >
+                    <div id={`id${shortMovie.id}`}>
+                      <RateMovie></RateMovie>
+                    </div>
+                  </MovieCard>
                 ))}
               </div>
               <div className={s.paginationContainer}>

@@ -18,16 +18,19 @@ export const RateMovie = () => {
         return (
           <Button
             className={s.btn}
-            onClick={() => setRating(currentRating)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setRating(currentRating);
+            }}
             onMouseEnter={() => setHover(currentRating)}
             onMouseLeave={() => setHover(0)}
           >
             {hovered ? (
-              <StarHover></StarHover>
+              <StarHover className={s.star}></StarHover>
             ) : lessThanRating ? (
-              <StarChosen></StarChosen>
+              <StarChosen className={s.star}></StarChosen>
             ) : (
-              <Star></Star>
+              <Star className={s.star}></Star>
             )}
             {currentRating}
           </Button>

@@ -13,13 +13,17 @@ export const MovieFull = ({
   rating,
   poster,
   description,
+  children,
 }: MovieFullProps) => {
   return (
     <div className={s.root}>
       <div className={s.container}>
         <img className={s.img} src={poster} alt={title}></img>
         <div className={s.infoContainer}>
-          <h1 className={s.title}>{title}</h1>
+          <div className={s.titleContainer}>
+            <h1 className={s.title}>{title}</h1>
+            {children}
+          </div>
           <ul>
             <li className={s.detail}>
               Жанр: <span className={s.info}>{genre}</span>
