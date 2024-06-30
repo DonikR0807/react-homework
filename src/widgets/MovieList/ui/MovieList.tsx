@@ -92,7 +92,7 @@ export const MovieList = () => {
                   >
                     {isAuthorized && (
                       <div id={`id${shortMovie.id}`}>
-                        <RateMovie></RateMovie>
+                        <RateMovie movieId={shortMovie.id}></RateMovie>
                       </div>
                     )}
                   </MovieCard>

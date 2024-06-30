@@ -11,7 +11,7 @@ export const rateMovieApi = api.injectEndpoints({
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        body: { movieId, user_rate },
+        body: JSON.stringify({ movieId: movieId, user_rate }),
       }),
       invalidatesTags: ["Movie"],
     }),

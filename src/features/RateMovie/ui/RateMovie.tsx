@@ -17,7 +17,7 @@ export const RateMovie = ({ movieId }: { movieId: string }) => {
   const [rateMovie] = rateMovieApi.useRateMovieMutation();
   const dispatch = useDispatch();
 
-  function handleMovieRate(movieId: string, rating: number) {
+  function handleMovieRate(rating: number) {
     rateMovie({
       movieId,
       user_rate: rating,
@@ -44,7 +44,7 @@ export const RateMovie = ({ movieId }: { movieId: string }) => {
         return (
           <Button
             className={s.btn}
-            onClick={() => handleMovieRate(movieId, currentRating)}
+            onClick={() => handleMovieRate(currentRating)}
             onMouseEnter={() => setHover(currentRating)}
             onMouseLeave={() => setHover(0)}
           >
