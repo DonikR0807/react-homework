@@ -43,6 +43,7 @@ export const RateMovie = ({ movieId }: { movieId: string }) => {
 
         return (
           <Button
+            key={currentRating}
             className={s.btn}
             onClick={() => handleMovieRate(currentRating)}
             onMouseEnter={() => setHover(currentRating)}

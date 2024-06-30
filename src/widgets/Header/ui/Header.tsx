@@ -2,13 +2,26 @@ import { Link } from "react-router-dom";
 import s from "./Header.module.css";
 import { Button } from "src/shared/ui";
 import ProfileIcon from "src/shared/assets/icons/profile.svg?react";
-import { LogInBtn, LogoutBtn, selectIsAuthorized } from "src/features/Auth";
+import {
+  LogInBtn,
+  LogoutBtn,
+  selectIsAuthorized,
+  userAuthorized,
+} from "src/features/Auth";
 import { useDispatch, useSelector } from "react-redux";
 import { resetRatings } from "src/features/RateMovie/model/ratedMoviesSlice";
+import React from "react";
 
 export const Header = () => {
   const isAuthorized = useSelector(selectIsAuthorized);
   const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(userAuthorized());
+    }
+  }, [dispatch]);
 
   return (
     <header className={s.header}>
