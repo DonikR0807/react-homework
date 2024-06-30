@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import s from "./Header.module.css";
 import { Button } from "src/shared/ui";
 import ProfileIcon from "src/shared/assets/icons/profile.svg?react";
-import { LogInBtn, selectIsAuthorized } from "src/features/Auth";
-import { useSelector } from "react-redux";
+import { LogInBtn, LogoutBtn, selectIsAuthorized } from "src/features/Auth";
+import { useDispatch, useSelector } from "react-redux";
+import { resetRatings } from "src/features/RateMovie/model/ratedMoviesSlice";
 
 export const Header = () => {
   const isAuthorized = useSelector(selectIsAuthorized);
+  const dispatch = useDispatch();
 
   return (
     <header className={s.header}>
@@ -32,7 +34,7 @@ export const Header = () => {
             >
               <ProfileIcon className={s.profileIcon}></ProfileIcon>
             </Button>
-            <Button variant="outlined">Выйти</Button>
+            <LogoutBtn onLogout={() => dispatch(resetRatings())}></LogoutBtn>
           </div>
         ) : (
           <LogInBtn></LogInBtn>

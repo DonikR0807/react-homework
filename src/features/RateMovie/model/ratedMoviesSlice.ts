@@ -17,8 +17,11 @@ const ratedMoviesSlice = createSlice({
       const { movieId, rating } = action.payload;
       state[movieId] = rating;
     },
+    resetRatings() {
+      return {};
+    },
   },
 });
 
-export const { movieWasRated } = ratedMoviesSlice.actions;
+export const { movieWasRated, resetRatings } = ratedMoviesSlice.actions;
 export const { reducer: ratedMoviesReducer } = ratedMoviesSlice;
