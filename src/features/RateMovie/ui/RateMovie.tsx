@@ -8,6 +8,7 @@ import { rateMovieApi } from "../model/rateMovieApi";
 import { useDispatch, useSelector } from "react-redux";
 import { movieWasRated } from "../model/ratedMoviesSlice";
 import { selectMoviesRatingById } from "../model/selectors";
+import { debounce } from "src/shared/lib";
 
 export const RateMovie = ({ movieId }: { movieId: string }) => {
   const rating = useSelector((state: RootState) =>
@@ -17,22 +18,54 @@ export const RateMovie = ({ movieId }: { movieId: string }) => {
   const [rateMovie] = rateMovieApi.useRateMovieMutation();
   const dispatch = useDispatch();
 
-  function handleMovieRate(rating: number) {
-    rateMovie({
-      movieId,
-      user_rate: rating,
-    })
-      .unwrap()
-      .then(() => {
+  const handleMovieRate = React.useCallback(
+    debounce((rating: number) => {
+      rateMovie({
+        movieId,
+        user_rate: rating,
+      })
+        .unwrap()
+        .then(() => {
+          dispatch(
+            movieWasRated({
+              movieId,
+              rating,
+            }),
+          );
+          const savedRatedMovies = localStorage.getItem("ratedMovies");
+          if (savedRatedMovies) {
+            const parsed: { [index: string]: number } =
+              JSON.parse(savedRatedMovies);
+            parsed[movieId] = rating;
+            localStorage.setItem("ratedMovies", JSON.stringify(parsed));
+          } else {
+            localStorage.setItem(
+              "ratedMovies",
+              JSON.stringify({
+                [movieId]: rating,
+              }),
+            );
+          }
+        })
+        .catch(() => alert("Failed to rate a movie!"));
+    }, 300),
+    [],
+  );
+
+  React.useEffect(() => {
+    const savedRatedMovies = localStorage.getItem("ratedMovies");
+    if (savedRatedMovies) {
+      const parsed: { [index: string]: number } = JSON.parse(savedRatedMovies);
+      if (parsed[movieId]) {
         dispatch(
           movieWasRated({
             movieId,
-            rating,
+            rating: parsed[movieId],
           }),
         );
-      })
-      .catch(() => alert("Failed to rate a movie!"));
-  }
+      }
+    }
+  }, [dispatch, movieId]);
 
   return (
     <div className={s.root}>

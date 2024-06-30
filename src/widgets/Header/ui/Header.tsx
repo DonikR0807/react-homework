@@ -23,6 +23,11 @@ export const Header = () => {
     }
   }, [dispatch]);
 
+  function handleLogout() {
+    localStorage.removeItem("ratedMovies");
+    dispatch(resetRatings());
+  }
+
   return (
     <header className={s.header}>
       <Link to={"/"} className={s.link}>
@@ -47,7 +52,7 @@ export const Header = () => {
             >
               <ProfileIcon className={s.profileIcon}></ProfileIcon>
             </Button>
-            <LogoutBtn onLogout={() => dispatch(resetRatings())}></LogoutBtn>
+            <LogoutBtn onLogout={() => handleLogout()}></LogoutBtn>
           </div>
         ) : (
           <LogInBtn></LogInBtn>
