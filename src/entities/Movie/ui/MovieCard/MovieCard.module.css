@@ -4,6 +4,7 @@
     background-color: var(--white-text);
     transition: .3s background-color;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .root:hover {

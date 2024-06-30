@@ -17,6 +17,7 @@ import React from "react";
 import { ConditionalRender, Loader } from "src/shared/ui";
 import { RateMovie } from "src/features/RateMovie/ui/RateMovie";
 import { useNavigate } from "react-router-dom";
+import { selectIsAuthorized } from "src/features/Auth";
 
 export const MovieList = () => {
   const currentPage = useSelector(selectCurrentPage);
@@ -25,6 +26,7 @@ export const MovieList = () => {
   const yearIsNotSelected = useSelector(selectYearIsNotSelected);
   const genreIsNotSelected = useSelector(selectGenreIsNotSelected);
   const searchValue = useSelector(selectSearchValue);
+  const isAuthorized = useSelector(selectIsAuthorized);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -88,9 +90,11 @@ export const MovieList = () => {
                     key={shortMovie.id}
                     onClick={(e) => handleMovieClick(e, shortMovie.id)}
                   >
-                    <div id={`id${shortMovie.id}`}>
-                      <RateMovie></RateMovie>
-                    </div>
+                    {isAuthorized && (
+                      <div id={`id${shortMovie.id}`}>
+                        <RateMovie></RateMovie>
+                      </div>
+                    )}
                   </MovieCard>
                 ))}
               </div>

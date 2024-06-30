@@ -8,6 +8,7 @@ export const movieApi = api.injectEndpoints({
     }),
     getMovieById: build.query<FullMovieInfo, number>({
       query: (movieId) => `/api/v1/movie/${movieId}`,
+      providesTags: ["Movie"],
     }),
   }),
   overrideExisting: false,

@@ -3,13 +3,16 @@ import s from "./MoviePage.module.css";
 import { useParams } from "react-router-dom";
 import { ConditionalRender, Loader } from "src/shared/ui";
 import { Carousel } from "src/shared/ui/Carousel/Carousel";
-import { RateMovie } from "src/features/RateMovie/ui/RateMovie";
+import { RateMovie } from "src/features/RateMovie/";
+import { useSelector } from "react-redux";
+import { selectIsAuthorized } from "src/features/Auth";
 
 export const MoviePage = () => {
   const { movieId } = useParams<"movieId">();
   const { data, isLoading, isSuccess, isError } = movieApi.useGetMovieByIdQuery(
     Number(movieId),
   );
+  const isAuthorized = useSelector(selectIsAuthorized);
 
   return (
     <div className={s.root}>
@@ -23,7 +26,7 @@ export const MoviePage = () => {
               <div>
                 <div className={s.movieContainer}>
                   <MovieFull {...data}>
-                    <RateMovie></RateMovie>
+                    {isAuthorized && <RateMovie movieId={data.id}></RateMovie>}
                   </MovieFull>
                 </div>
                 <Carousel
